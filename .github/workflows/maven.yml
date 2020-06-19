@@ -24,6 +24,8 @@ jobs:
       run: mvn -B package --file pom.xml --settings settings.xml
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.3
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         # Set the sonar.projectBaseDir analysis property
         projectBaseDir: # optional, default is .
